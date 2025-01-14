@@ -1,4 +1,4 @@
-import liferay from "./src/liferay";
+import liferay from "./liferay";
 
 const virtualInstances = ["example.liferay.com"];
 

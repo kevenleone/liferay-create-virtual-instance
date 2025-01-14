@@ -1,7 +1,7 @@
 import ky from "ky";
 import z from "zod";
 
-import Cache from "./Cache";
+import Cache from "./cache";
 
 export const liferayAuthSchema = z.object({
     LIFERAY_CLIENT_ID: z.string().optional(),

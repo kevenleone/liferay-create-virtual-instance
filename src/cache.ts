@@ -4,33 +4,33 @@
  */
 
 class Cache {
-  public cache = new Map<string, any>();
-  private static instance: Cache;
-  static KEYS = {
-    JIRA_APP_ID_KEY: "JIRA_APP_ID_KEY",
-  };
+    public cache = new Map<string, any>();
+    private static instance: Cache;
+    static KEYS = {
+        JIRA_APP_ID_KEY: "JIRA_APP_ID_KEY",
+    };
 
-  public static getInstance(): Cache {
-    if (!Cache.instance) {
-      Cache.instance = new Cache();
+    public static getInstance(): Cache {
+        if (!Cache.instance) {
+            Cache.instance = new Cache();
+        }
+
+        return Cache.instance;
     }
 
-    return Cache.instance;
-  }
+    public get<T = any>(key: string): T | undefined {
+        const cachedValue = this.cache.get(key);
 
-  public get<T = any>(key: string): T | undefined {
-    const cachedValue = this.cache.get(key);
+        return cachedValue;
+    }
 
-    return cachedValue;
-  }
+    public has(key: string): boolean {
+        return this.cache.has(key);
+    }
 
-  public has(key: string): boolean {
-    return this.cache.has(key);
-  }
-
-  public set(key: string, value: unknown) {
-    this.cache.set(key, value);
-  }
+    public set(key: string, value: unknown) {
+        this.cache.set(key, value);
+    }
 }
 
 export default Cache;
