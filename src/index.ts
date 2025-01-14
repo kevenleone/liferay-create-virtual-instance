@@ -21,7 +21,7 @@ for (const virtualInstance of virtualInstances) {
         }
     );
 
-    const data = response.json();
+    const data = await response.json();
 
     console.log("Virtual Instance created", data);
 }
